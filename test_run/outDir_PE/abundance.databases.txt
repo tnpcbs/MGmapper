@@ -1,0 +1,3 @@
+Fullmode	notPhiX	100.00	49652	49652
+Chainmode	testDB	100.000	49652	49652
+Chainmode	Unmapped	  0.000	0	49652

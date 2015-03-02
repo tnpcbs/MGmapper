@@ -1,0 +1,20 @@
+Explanation of columns in 'stat.databaseName.txt' files:
+Column 1: Ref sequence name
+Column 2: % of nucleotides that map to Ref sequence, compared to number of nucleotides that mapped to one paticular database
+Column 3: Depth or X,  i.e. total number of nucleotides mapped to Ref sequence divided with length of Ref sequence
+Column 4: Total number of nucleotides mapped to Ref sequence
+Column 5: Coverage, fraction of Ref sequence that is covered
+Column 6: Number of unique positions in Ref sequence that is covered
+Column 7: Size of Ref sequence
+Column 8: % of reads that map to Ref sequence, compared to number of reads that mapped to one paticular database
+Column 9: Total number of reads mapped to Ref sequence
+Column 10: Description of Ref sequence
+
+A special file is 'abundance.databases.xlsx' which shows read aboundance for all databases
+Percentages are calculated based on reads available after removing those that map to PhiX (notPhiX). notPhiX count is set
+Unmapped reads is calculated only on runs in Chainmode.
+
+Files named *uniq* only include uniquely mapped reads i.e. only 1 best hit. A possible second hit has a lower alignment score
+AS is the alignment-score and AX is the second best alignment score for one paticular read mapping to a reference sequence database
+
+All files are combined in two excel workbooks named sample.xlsx and sample.uniq.xlsx which include headers and figures

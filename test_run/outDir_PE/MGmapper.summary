@@ -1,0 +1,36 @@
+## Local date and time Mon Mar  2 11:48:21 2015 - start main program
+# command: ../MGmapper_PE.pl -i simulated.F.fq.gz -j simulated.R.fq.gz -d outDir_PE -C 1 
+# working dir: /net/home/home/projects9/tnp/programs/MGmapper.v1.4/test_run
+
+## Local date and time Mon Mar  2 11:48:22 2015 - cutadapt start
+1	simulated.F.fq.gz	24826	24826
+2	simulated.R.fq.gz	24826	24826
+## Local date and time Mon Mar  2 11:48:37 2015 - start joining files before readsInCommon
+## Local date and time Mon Mar  2 11:48:42 2015 - start readsInCommon
+
+Total	Reads read	reads after cutadapt	reads after readsInCommon
+Total	49652	49652	49652
+
+## Local date and time Mon Mar  2 11:48:48 2015 - start mapping against phiX
+Reads not mapped to db= phiX:	49652
+
+
+Chain mode mapping starts here:
+-------------------------------
+
+## Local date and time Mon Mar  2 11:48:54 2015 - start mapping against testDB
+Unmapped reads from U= cleaned.nophiX.bam
+Mapping reads from U against db= testDB:
+Map to db:	49652
+Dont map to db:	0	(outDir_PE/mapNot.testDB.1.bam)
+
+## Local date and time Mon Mar  2 11:54:26 2015 - Start making excel files
+Ave insert size: 249.18
+Std insert size: 25.10
+
+File with unmapped reads in : outDir_PE/unmapped.F.fq.gz
+Number of unmapped reads : 0
+File with unmapped reads in : outDir_PE/unmapped.R.fq.gz
+Number of unmapped reads : 0
+## Local date and time Mon Mar  2 11:54:37 2015 - gzip files
+## Local date and time Mon Mar  2 11:54:38 2015 - done

@@ -1,0 +1,8 @@
+simulated.F.fq.gz	24826
+simulated.R.fq.gz	24826
+outDir_PE/simulated.F.fq.gz.cutadapt	24826
+outDir_PE/simulated.R.fq.gz.cutadapt	24826
+outDir_PE/readsInCommon.F.fq	24826
+outDir_PE/cleaned.nophiX.bam	49652
+outDir_PE/mapTo.testDB.bam	49652
+outDir_PE/mapTo.testDB.uniq.bam	48020

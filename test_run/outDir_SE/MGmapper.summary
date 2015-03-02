@@ -1,0 +1,23 @@
+## Local date and time Mon Mar  2 12:16:58 2015 - start main program
+# command: ../MGmapper_SE.pl -f fastq.list -d outDir_SE -C 1 
+# working dir: /net/home/home/projects9/tnp/programs/MGmapper.v1.4/test_run
+
+## Local date and time Mon Mar  2 12:16:59 2015 - cutadapt start
+1	/home/projects9/tnp/programs/MGmapper.v1.4/test_run/simulated.F.fq.gz	24826	24826
+2	/home/projects9/tnp/programs/MGmapper.v1.4/test_run/simulated.R.fq.gz	24826	24826
+## Local date and time Mon Mar  2 12:17:19 2015 - start mapping against phiX
+Reads not mapped to db= phiX:	49652
+
+
+Chain mode mapping starts here:
+-------------------------------
+
+## Local date and time Mon Mar  2 12:17:24 2015 - start mapping against testDB
+Unmapped reads from U= cleaned.nophiX.bam
+Mapping reads from U against db= testDB:
+Map to db:	49652
+Dont map to db:	0	(outDir_SE/mapNot.testDB.1.bam)
+
+File with unmapped reads : outDir_SE/unmapped.fq.gz
+Number of unmapped reads : 0
+## Local date and time Mon Mar  2 12:22:42 2015 - done

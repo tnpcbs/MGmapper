@@ -1,0 +1,7 @@
+/home/projects9/tnp/programs/MGmapper.v1.4/test_run/simulated.F.fq.gz	24826
+/home/projects9/tnp/programs/MGmapper.v1.4/test_run/simulated.R.fq.gz	24826
+outDir_SE/simulated.F.fq.gz.cutadapt	24826
+outDir_SE/simulated.R.fq.gz.cutadapt	24826
+outDir_SE/cleaned.nophiX.bam	49652
+outDir_SE/mapTo.testDB.bam	49652
+outDir_SE/mapTo.testDB.uniq.bam	47699

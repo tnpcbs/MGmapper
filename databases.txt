@@ -1,0 +1,35 @@
+# Databases to be use with the MGmapper programs.
+# Column 1: Full path to database - exclude suffix names to a database
+# Column 2: Name of database to be used in output - can be any name you want. Names in column 2 must be unique.
+# Column 3- optional description of the database e.g. date of creation, number of fasta entries, size  and other remarks
+# The 3 columns are white space separated.
+# The first database phiX174 must be present in the first line - it will not show up when running MGmapper_PE.pl -h or MGmapper_SE.pl -h
+# The phiX174 database will be used as first step to clean reads for potential positive control reads
+#
+/home/projects9/tnp/programs/MGmapper.v1.4/db/phiX174/phiX174	phiX174	
+/home/projects9/tnp/programs/MGmapper.v1.4/db/Bacteria_test/Bacteria_test testDB	made: March-2-2015 entries: 1 (6.3 Mb)
+#/home/databases/metagenomics/db/Bacteria/Bacteria Bacteria	made: July-14-2014 entries: 3017 (8.9 Gb)
+#/home/databases/metagenomics/db/Bacteria/Bacteria Bacteria	made: July-14-2014 entries: 3017 (8.9 Gb)
+#/home/databases/metagenomics/db/MetaHitAssembly/MetaHitAssembly	MetaHitAssembly	made: July-14-2014 entries: 41126 (884 Mb)
+#/home/databases/metagenomics/db/HumanMicrobiome/HumanMicrobiome	HumanMicrobiome	made: July-14-2014 entries: 42645 (2.7 Gb)
+#/home/databases/metagenomics/db/Bacteria_draft/Bacteria_draft	Bacteria_draft	made: Dec-6-2014 entries: 3155439 (91 Gb)
+#/home/databases/metagenomics/db/ResFinder/ResFinder		ResFinder	made: July-14-2014 entries: 2130 (2.0 Mb) remark: Resistance genes
+#/home/databases/metagenomics/db/Human/Human			Human		made: July-14-2014 entries: 25 (3.0 Gb)
+#/home/databases/metagenomics/db/Virus/Virus			Virus		made: Dec-6-2014 entries: 5764 (166 Mb)
+#/home/databases/metagenomics/db/Fungi/Fungi			Fungi		made: July-14-2014
+#/home/databases/metagenomics/db/Protozoa/Protozoa		Protozoa	made: July-14-2014 entries: 592468 (5.2 Gb)
+#/home/databases/metagenomics/db/Plasmid/Plasmid			Plasmid		made: July-14-2014 entries: 2091 (257 Mb)
+#/home/databases/metagenomics/db/Virulence/Virulence		Virulence	made: July-14-2014 entries: 1924 (2.9 Mb)
+#/home/databases/metagenomics/db/Plant/Plant			Plant		made: July-14-2014 entries: 5447342 (49 Gb)
+#/home/databases/metagenomics/db/Vertebrates_mammals/Vertebrates_mammals		Vertebrates_mammals	made: July-14-2014 entries: 4101026 (191 Gb)
+#/home/databases/metagenomics/db/Vertebrates_other/Vertebrates_other		Vertebrates_other	made: July-14-2014 entries: 4645715 (96 Gb)
+#/home/databases/metagenomics/db/Invertebrates/Invertebrates			Invertebrates	made: July-14-2014 entries: 3138785 (54 Gb)
+#/home/databases/metagenomics/db/Common_plants/Common_plants			Common_plants	made: July-14-2014 entries: 514607 (6.7 Gb) remark: Rice Wheat Maize & Potato
+#/home/databases/metagenomics/db/Common_animals/Common_animals			Common_animals	   made: July-14-2014 entries: 132 (12 Gb) remark: Pig Cow Chicken rat & Sheep
+#/home/databases/metagenomics/db/GreenGenes/GreenGenes				GreenGenes	   made: July-14-2014 entries: 1012495 (1.5 Gb) remark: 16SrRNA
+#/home/databases/metagenomics/db/Silva/Silva					Silva		   made: July-14-2014 entries: 464266 (700 Mb) remark: 16SrRNA
+#
+# Databases are made by running these 3 programs. The first step with fastauniq.pl is only needed if a non-redundant database is preferred.
+# fastauniq.pl -i databaseName.fsa -v -l fastauniq.databaseName.log -o databaseName
+# bwa index databaseName
+# samtools faidx databaseName

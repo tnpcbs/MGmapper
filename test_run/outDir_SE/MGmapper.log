@@ -1,0 +1,344 @@
+# command: ../MGmapper_SE.pl -f fastq.list -d outDir_SE -C 1 
+
+# Current directory: /net/home/home/projects9/tnp/programs/MGmapper.v1.4/test_run
+# -C: Chain mode: map reads against these databases: testDB
+# -c: Number of cores: 1
+# -t: Matches/readLength: 0.8
+# -v: logfile: outDir_SE/MGmapper.log
+# -d: Output directory: outDir_SE
+
+Adapters removed by cutadapt:
+1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNATCTCGTATGCCGTCTTCTGCTTG
+2	AATGATACGGCGACCACCGAGATCACACTCTTTCCCTACACGACGCTCTTCCGATCT
+3	AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
+4	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA
+
+# Doing: gunzip -c /home/projects9/tnp/programs/MGmapper.v1.4/test_run/simulated.F.fq.gz | wc -l
+# Doing: gunzip -c /home/projects9/tnp/programs/MGmapper.v1.4/test_run/simulated.R.fq.gz | wc -l
+/tools/bin/cutadapt --quality-base=33 -f fastq -q 30 -m 30 -b AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNATCTCGTATGCCGTCTTCTGCTTG -b AATGATACGGCGACCACCGAGATCACACTCTTTCCCTACACGACGCTCTTCCGATCT -b AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -b AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA /home/projects9/tnp/programs/MGmapper.v1.4/test_run/simulated.F.fq.gz > outDir_SE/simulated.F.fq.gz.cutadapt
+/tools/bin/cutadapt --quality-base=33 -f fastq -q 30 -m 30 -b AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNATCTCGTATGCCGTCTTCTGCTTG -b AATGATACGGCGACCACCGAGATCACACTCTTTCCCTACACGACGCTCTTCCGATCT -b AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -b AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA /home/projects9/tnp/programs/MGmapper.v1.4/test_run/simulated.R.fq.gz > outDir_SE/simulated.R.fq.gz.cutadapt
+cutadapt version 1.2.1
+Command line parameters: --quality-base=33 -f fastq -q 30 -m 30 -b AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNATCTCGTATGCCGTCTTCTGCTTG -b AATGATACGGCGACCACCGAGATCACACTCTTTCCCTACACGACGCTCTTCCGATCT -b AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -b AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA /home/projects9/tnp/programs/MGmapper.v1.4/test_run/simulated.F.fq.gz
+Maximum error rate: 10.00%
+   No. of adapters: 4
+   Processed reads:        24826
+   Processed bases:      2482600 bp (2.5 Mbp)
+     Trimmed reads:         3135 (12.6%)
+   Quality-trimmed:            0 bp (0.0 Mbp) (0.00% of total)
+     Trimmed bases:        10469 bp (0.0 Mbp) (0.42% of total)
+   Too short reads:            0 (0.0% of processed reads)
+    Too long reads:            0 (0.0% of processed reads)
+        Total time:      3.26 s
+     Time per read:      0.13 ms
+
+=== Adapter 1 ===
+
+Adapter 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNATCTCGTATGCCGTCTTCTGCTTG', length 64, was trimmed 1297 times.
+719 times, it overlapped the 5' end of a read
+578 times, it overlapped the 3' end or was within the read
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-39 bp: 3; 40-49 bp: 4; 50-59 bp: 5; 60-64 bp: 6
+
+Lengths of removed sequences (5')
+length	count	expected	max. errors
+3	556	387.9	0
+4	114	97.0	0
+5	35	24.2	0
+6	9	6.1	0
+7	3	1.5	0
+8	1	0.4	0
+9	1	0.1	0
+
+
+Lengths of removed sequences (3' or within)
+length	count	expected	max. errors
+3	411	387.9	0
+4	137	97.0	0
+5	21	24.2	0
+6	8	6.1	0
+7	1	1.5	0
+
+=== Adapter 2 ===
+
+Adapter 'AATGATACGGCGACCACCGAGATCACACTCTTTCCCTACACGACGCTCTTCCGATCT', length 57, was trimmed 1220 times.
+548 times, it overlapped the 5' end of a read
+672 times, it overlapped the 3' end or was within the read
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-39 bp: 3; 40-49 bp: 4; 50-57 bp: 5
+
+Lengths of removed sequences (5')
+length	count	expected	max. errors
+3	383	387.9	0
+4	128	97.0	0
+5	28	24.2	0
+6	7	6.1	0
+7	1	1.5	0
+11	1	0.0	1
+
+
+Lengths of removed sequences (3' or within)
+length	count	expected	max. errors
+3	518	387.9	0
+4	120	97.0	0
+5	27	24.2	0
+6	6	6.1	0
+7	1	1.5	0
+
+=== Adapter 3 ===
+
+Adapter 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC', length 34, was trimmed 334 times.
+334 times, it overlapped the 5' end of a read
+0 times, it overlapped the 3' end or was within the read
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-34 bp: 3
+
+Lengths of removed sequences (5')
+length	count	expected	max. errors
+3	243	387.9	0
+4	74	97.0	0
+5	12	24.2	0
+6	2	6.1	0
+7	1	1.5	0
+8	1	0.4	0
+9	1	0.1	0
+
+
+Lengths of removed sequences (3' or within)
+length	count	expected	max. errors
+
+=== Adapter 4 ===
+
+Adapter 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA', length 34, was trimmed 284 times.
+284 times, it overlapped the 5' end of a read
+0 times, it overlapped the 3' end or was within the read
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-34 bp: 3
+
+Lengths of removed sequences (5')
+length	count	expected	max. errors
+3	207	387.9	0
+4	67	97.0	0
+5	9	24.2	0
+9	1	0.1	0
+
+
+Lengths of removed sequences (3' or within)
+length	count	expected	max. errors
+
+cutadapt version 1.2.1
+Command line parameters: --quality-base=33 -f fastq -q 30 -m 30 -b AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNATCTCGTATGCCGTCTTCTGCTTG -b AATGATACGGCGACCACCGAGATCACACTCTTTCCCTACACGACGCTCTTCCGATCT -b AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -b AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA /home/projects9/tnp/programs/MGmapper.v1.4/test_run/simulated.R.fq.gz
+Maximum error rate: 10.00%
+   No. of adapters: 4
+   Processed reads:        24826
+   Processed bases:      2482600 bp (2.5 Mbp)
+     Trimmed reads:         3082 (12.4%)
+   Quality-trimmed:            0 bp (0.0 Mbp) (0.00% of total)
+     Trimmed bases:        10326 bp (0.0 Mbp) (0.42% of total)
+   Too short reads:            0 (0.0% of processed reads)
+    Too long reads:            0 (0.0% of processed reads)
+        Total time:      3.17 s
+     Time per read:      0.13 ms
+
+=== Adapter 1 ===
+
+Adapter 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNATCTCGTATGCCGTCTTCTGCTTG', length 64, was trimmed 1268 times.
+712 times, it overlapped the 5' end of a read
+556 times, it overlapped the 3' end or was within the read
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-39 bp: 3; 40-49 bp: 4; 50-59 bp: 5; 60-64 bp: 6
+
+Lengths of removed sequences (5')
+length	count	expected	max. errors
+3	564	387.9	0
+4	102	97.0	0
+5	27	24.2	0
+6	10	6.1	0
+7	2	1.5	0
+8	2	0.4	0
+10	2	0.0	1
+11	1	0.0	1
+12	2	0.0	1
+
+
+Lengths of removed sequences (3' or within)
+length	count	expected	max. errors
+3	381	387.9	0
+4	141	97.0	0
+5	28	24.2	0
+6	5	6.1	0
+9	1	0.1	0
+
+=== Adapter 2 ===
+
+Adapter 'AATGATACGGCGACCACCGAGATCACACTCTTTCCCTACACGACGCTCTTCCGATCT', length 57, was trimmed 1155 times.
+540 times, it overlapped the 5' end of a read
+615 times, it overlapped the 3' end or was within the read
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-39 bp: 3; 40-49 bp: 4; 50-57 bp: 5
+
+Lengths of removed sequences (5')
+length	count	expected	max. errors
+3	390	387.9	0
+4	114	97.0	0
+5	24	24.2	0
+6	7	6.1	0
+7	2	1.5	0
+8	2	0.4	0
+11	1	0.0	1
+
+
+Lengths of removed sequences (3' or within)
+length	count	expected	max. errors
+3	474	387.9	0
+4	108	97.0	0
+5	26	24.2	0
+6	6	6.1	0
+7	1	1.5	0
+
+=== Adapter 3 ===
+
+Adapter 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC', length 34, was trimmed 358 times.
+358 times, it overlapped the 5' end of a read
+0 times, it overlapped the 3' end or was within the read
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-34 bp: 3
+
+Lengths of removed sequences (5')
+length	count	expected	max. errors
+3	259	387.9	0
+4	80	97.0	0
+5	11	24.2	0
+6	2	6.1	0
+7	4	1.5	0
+9	1	0.1	0
+11	1	0.0	1
+
+
+Lengths of removed sequences (3' or within)
+length	count	expected	max. errors
+
+=== Adapter 4 ===
+
+Adapter 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA', length 34, was trimmed 301 times.
+301 times, it overlapped the 5' end of a read
+0 times, it overlapped the 3' end or was within the read
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-34 bp: 3
+
+Lengths of removed sequences (5')
+length	count	expected	max. errors
+3	237	387.9	0
+4	52	97.0	0
+5	8	24.2	0
+6	2	6.1	0
+10	1	0.0	1
+11	1	0.0	1
+
+
+Lengths of removed sequences (3' or within)
+length	count	expected	max. errors
+
+# Doing: wc -l outDir_SE/simulated.F.fq.gz.cutadapt
+# Doing: wc -l outDir_SE/simulated.R.fq.gz.cutadapt
+# Doing: cat outDir_SE/simulated.F.fq.gz.cutadapt >> outDir_SE/cutadapt.all.fq
+# Doing: cat outDir_SE/simulated.R.fq.gz.cutadapt >> outDir_SE/cutadapt.all.fq
+Calling mapping with parameters: outDir_SE/cutadapt.all.fq
+# Doing: /tools/ngs/bwa-0.7.10/bwa mem -t 1 /home/projects9/tnp/programs/MGmapper.v1.4/db/phiX174/phiX174 outDir_SE/cutadapt.all.fq | /tools/bin/samtools view -f4 -Sb - | cat > outDir_SE/cleaned.nophiX.bam
+
+[M::main_mem] read 49652 sequences (4944405 bp)...
+[M::mem_process_seqs] Processed 49652 reads in 1.968 CPU sec, 1.974 real sec
+[samopen] SAM header is present: 1 sequences.
+[main] Version: 0.7.10-r789
+[main] CMD: /tools/ngs/bwa-0.7.10/bwa mem -t 1 /home/projects9/tnp/programs/MGmapper.v1.4/db/phiX174/phiX174 outDir_SE/cutadapt.all.fq
+[main] Real time: 3.361 sec; CPU: 2.060 sec
+# Doing: /tools/bin/samtools flagstat outDir_SE/cleaned.nophiX.bam | head -1 | cut -f1 -d' '
+calling mapToDatabases with parameters: 'outDir_SE/cleaned.nophiX.bam' 'testDB'
+calling mapToIndex with parameters: 'outDir_SE/cleaned.nophiX.bam' '/home/projects9/tnp/programs/MGmapper.v1.4/db/Bacteria_test/Bacteria_test' 'outDir_SE/map.testDB.1.bam' for i=1
+# Doing: /tools/bin/bamtools convert -format fastq -in outDir_SE/cleaned.nophiX.bam | /tools/ngs/bwa-0.7.10/bwa mem -t 1 -M /home/projects9/tnp/programs/MGmapper.v1.4/db/Bacteria_test/Bacteria_test - | /tools/bin/samtools view -F 256 -Sb - | cat > outDir_SE/map.testDB.1.bam
+[M::main_mem] read 49652 sequences (4944405 bp)...
+[M::mem_process_seqs] Processed 49652 reads in 1.468 CPU sec, 1.465 real sec
+[samopen] SAM header is present: 1 sequences.
+[main] Version: 0.7.10-r789
+[main] CMD: /tools/ngs/bwa-0.7.10/bwa mem -t 1 -M /home/projects9/tnp/programs/MGmapper.v1.4/db/Bacteria_test/Bacteria_test -
+[main] Real time: 3.494 sec; CPU: 1.628 sec
+# Calling subroutine analyzeTrueHit with these parameters:
+# outDir_SE/map.testDB.1.bam
+# outDir_SE/mapTo.testDB.1.bam
+# 
+# outDir_SE/mapNot.testDB.1.bam
+# 0.8
+# /home/projects9/tnp/programs/MGmapper.v1.4/db/Bacteria_test/Bacteria_test.ann
+Paired reads are only accepted if both have a sum of Matches+Mismatches divided by length of read >= 0.8
+# Analyzing hits that mapped with bwa: /tools/bin/samtools view -h -F4 outDir_SE/map.testDB.1.bam |
+# write ok hits to outDir_SE/mapTo.testDB.1.bam.Ok.sam
+# Removed 0 out of 49652 reads from outDir_SE/mapTo.testDB.1.bam
+Doing: /tools/bin/samtools view outDir_SE/mapTo.testDB.1.bam.Ok.sam -Sb | cat > outDir_SE/mapTo.testDB.1.bam
+[samopen] SAM header is present: 1 sequences.
+Doing: /tools/bin/samtools view outDir_SE/mapTo.testDB.1.bam.Ok.Uniq.sam -Sb | cat > outDir_SE/mapTo.testDB.uniq.1.bam
+[samopen] SAM header is present: 1 sequences.
+[samopen] SAM header is present: 1 sequences.
+[sam_read1] reference 'ID:bwa	PN:bwa	VN:0.7.10-r789	CL:/tools/ngs/bwa-0.7.10/bwa mem -t 1 -M /home/projects9/tnp/programs/MGmapper.v1.4/db/Bacteria_test/Bacteria_test -
+' is recognized as '*'.
+[main_samview] truncated file.
+# Doing: /tools/bin/samtools sort outDir_SE/mapTo.testDB.1.bam outDir_SE/mapTo.testDB.1.sort
+
+# Doing: rm outDir_SE/mapTo.testDB.1.bam
+# Doing: /tools/bin/samtools sort outDir_SE/mapTo.testDB.uniq.1.bam outDir_SE/mapTo.testDB.uniq.1.sort
+
+# Doing: rm outDir_SE/mapTo.testDB.uniq.1.bam
+# Doing: rm outDir_SE/map.testDB.1.bam
+Adding to mapToList; outDir_SE/mapTo.testDB.1.sort.bam
+Adding to mapToListUniq; outDir_SE/mapTo.testDB.uniq.1.sort.bam
+# Doing: ln -s mapTo.testDB.1.sort.bam mapTo.testDB.bam
+# Doing: ln -s mapTo.testDB.uniq.1.sort.bam mapTo.testDB.uniq.bam
+after mapToDatabases chainmode
+mapNot: 'outDir_SE/mapNot.testDB.1.bam'
+mapTo: 'outDir_SE/mapTo.testDB.bam'
+mapToList: 0 outDir_SE/mapTo.testDB.1.sort.bam
+mapToUniq: outDir_SE/mapTo.testDB.uniq.bam
+mapToListUniq: 0 outDir_SE/mapTo.testDB.uniq.1.sort.bam
+# Doing: /tools/bin/samtools flagstat outDir_SE/mapTo.testDB.bam | head -1 | cut -f1 -d' '
+# Doing: /tools/bin/samtools flagstat outDir_SE/mapTo.testDB.uniq.bam | head -1 | cut -f1 -d' '
+uniq reads in testDB: 47699
+# Doing: /tools/bin/samtools mpileup -f /home/projects9/tnp/programs/MGmapper.v1.4/db/Bacteria_test/Bacteria_test outDir_SE/mapTo.testDB.1.sort.bam | cat > outDir_SE/pileup.testDB.1
+[mpileup] 1 samples in 1 input files
+<mpileup> Set max per-file depth to 8000
+# Doing: /home/projects/tnp/programs/MGmapper.v1.4/scripts/mpileup2stat.pl -i outDir_SE/pileup.testDB.1 -a /home/projects9/tnp/programs/MGmapper.v1.4/db/Bacteria_test/Bacteria_test.ann  | cat > outDir_SE/stat.testDB.txt.1
+# Doing: cat outDir_SE/stat.testDB.txt.1 | sort -k 4 -nr > outDir_SE/stat.testDB.txt.tmp
+# In mergeSummeryFiles: mv outDir_SE/stat.testDB.txt.tmp outDir_SE/stat.testDB.txt
+# Doing: /tools/bin/samtools mpileup -f /home/projects9/tnp/programs/MGmapper.v1.4/db/Bacteria_test/Bacteria_test outDir_SE/mapTo.testDB.uniq.1.sort.bam | cat > outDir_SE/pileup.testDB.uniq.1
+[mpileup] 1 samples in 1 input files
+<mpileup> Set max per-file depth to 8000
+# Doing: /home/projects/tnp/programs/MGmapper.v1.4/scripts/mpileup2stat.pl -i outDir_SE/pileup.testDB.uniq.1 -a /home/projects9/tnp/programs/MGmapper.v1.4/db/Bacteria_test/Bacteria_test.ann  | cat > outDir_SE/stat.testDB.uniq.txt.1
+# Doing: cat outDir_SE/stat.testDB.uniq.txt.1 | sort -k 4 -nr > outDir_SE/stat.testDB.uniq.txt.tmp
+# In mergeSummeryFiles: mv outDir_SE/stat.testDB.uniq.txt.tmp outDir_SE/stat.testDB.uniq.txt
+mapNotPhiXReads = 49652 used as reference to max possible reads that can map to a database
+/tools/bin/python /home/projects/tnp/programs/MGmapper.v1.4/scripts/MGcsv2xls.py outDir_SE/sample.xlsx outDir_SE/abundance.databases.txt outDir_SE/stat.testDB.txt
+/tools/bin/python /home/projects/tnp/programs/MGmapper.v1.4/scripts/MGcsv2xls.py outDir_SE/sample.uniq.xlsx outDir_SE/abundance.databases.uniq.txt outDir_SE/stat.testDB.uniq.txt
+writing Excel file outDir_SE/sample.xlsx
+	writing worksheet abundance.databases
+	drawing pie chart abundance.databases
+	writing worksheet stat.testDB
+	drawing pie chart stat.testDB
+writing Excel file outDir_SE/sample.uniq.xlsx
+	writing worksheet abundance.databases.uniq
+	drawing pie chart abundance.databases.uniq
+	writing worksheet stat.testDB.uniq
+	drawing pie chart stat.testDB.uniq
+# Doing: /tools/bin/bamtools convert -in outDir_SE/mapNot.testDB.1.bam -format fastq | cat > outDir_SE/unmapped.fq
+# Doing: wc -l outDir_SE/unmapped.fq
+Doing: rm outDir_SE/simulated.F.fq.gz.cutadapt
+Doing: rm outDir_SE/simulated.R.fq.gz.cutadapt
+Doing: rm outDir_SE/cutadapt.all.fq
+Doing: rm outDir_SE/pileup.testDB.1
+Doing: rm outDir_SE/pileup.testDB.uniq.1
+Doing: rm outDir_SE/mapNot.testDB.1.bam
+Doing: pigz -p 1 outDir_SE/*.fq
