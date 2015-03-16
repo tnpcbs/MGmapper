@@ -576,10 +576,14 @@ if (! defined($Getopt::Std::opt_S)){
             $first=0;
         }
 
-	my @w=split(/\s+/,$command);
         my $command = cutadapt_SE($file);
-        my @w=split(/\s+/,$command);
-        $cutadaptFile{$file}=$w[-1];
+        if ($command =~ m/-o (\S+) /){
+            $cutadaptFile{$file}=$1;
+        }
+        else{
+            print LOG "problem extracting output name from cutadapt command:\n$command\n";
+            exit;
+        }
 
 	if (-e "${cutadaptFile{$file}}.gz"){
             $cutadaptFile{$file}= "${cutadaptFile{$file}}.gz";
@@ -1001,6 +1005,7 @@ sub cutadapt_SE{
     # remove adapter, trimm for forward reads
     #                                                                                                                                                                                 
     my $cutAdaptFile = "$workDir/$name" . '.cutadapt';
+    my $cutAdaptLog = "$workDir/$name" . '.cutadapt.log';
     my $gz = $cutAdaptFile . '.gz';
     if (-e $gz){
         $cutAdaptFile = $gz;
@@ -1009,7 +1014,7 @@ sub cutadapt_SE{
     if ($cleanupCutadapt){
 	push(@rmFiles,$cutAdaptFile);
     }
-    my $cmd = "$prog_cutadapt $fastq > $cutAdaptFile";
+    my $cmd = "$prog_cutadapt -o $cutAdaptFile $fastq > $cutAdaptLog";
 
     return("$cmd");
 }
@@ -2076,8 +2081,10 @@ sub cleanData{
 
 sub cutadapt{
     my ($inFile, $outFile) = @_;
+    
+    my $log = "$outFile.log";
+    my $cmd = "$prog_cutadapt -o $outFile $inFile > $log";
 
-    my $cmd = "$prog_cutadapt $inFile > $outFile";
     return($cmd);
 }
 
